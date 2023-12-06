@@ -18,6 +18,8 @@ source: https://262.ecma-international.org/
 
 ***`opt`*** - Подстрочный суффикс ***`opt`***, который может появляться после терминала или нетерминала, указывает на необязательный символ. Альтернатива, содержащая необязательный символ, фактически задает две правые стороны: одну, которая опускает необязательный элемент, и другую, которая включает его.
 
+***`[parameters]`*** - Это сокращение для набора продакшнов, определяющих все комбинации имен параметров, которым предшествует знак подчеркивания, добавляемый к параметризованному символу нетерминала.
+
 
 **Пример #1:**
 <pre>
@@ -65,5 +67,50 @@ ArgumentList может представлять собой либо одно As
 <b>for</b> ( <i>LexicalDeclaration ; Expression ) Statement</i>
 <b>for</b> ( <i>LexicalDeclaration Expression ; ) Statement</i>
 <b>for</b> ( <i>LexicalDeclaration Expression ; Expression ) Statement</i>
-  
+</pre>
+
+**Пример #5:**
+<pre>
+<i>StatementList</i><sub>[Return]</sub> :
+<i>ReturnStatement
+ExpressionStatement</i>
+</pre>
+
+удобная аббревиатура для:
+
+<pre>
+<i>StatementList :
+ReturnStatement
+ExpressionStatement
+
+StatementList_Return :
+ReturnStatement
+ExpressionStatement</i>
+</pre>
+
+**Пример #6:**
+<pre>
+<i>StatementList</i><sub>[Return, In]</sub> :
+<i>ReturnStatement
+ExpressionStatement</i>
+</pre>
+
+удобная аббревиатура для:
+
+<pre>
+<i>StatementList :
+ReturnStatement
+ExpressionStatement
+
+StatementList_Return :
+ReturnStatement
+ExpressionStatement
+
+StatementList_In :
+ReturnStatement
+ExpressionStatement
+
+StatementList_Return_In :
+ReturnStatement
+ExpressionStatement</i>
 </pre>
